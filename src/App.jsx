@@ -40,7 +40,7 @@ function App() {
         <Intro ref={introRef} />
         <About ref={aboutRef} />
         <Skills ref={skillsRef} />
-        <Footer />
+        <Footer   />
         
         
       </div>
