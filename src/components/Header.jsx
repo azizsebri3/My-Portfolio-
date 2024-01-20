@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Intro from "./Intro";
+import "../style.css"
 
 const Header = ({ introRef, aboutRef, skillsRef }) => {
   const [value, setValue] = useState(0);
@@ -53,22 +54,19 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
   }, []);
   window.addEventListener("scroll", scrollHandler);
 
-  const isSmScreen = useMediaQuery("(max-width:600px)");
+  const isSmScreen = useMediaQuery("(max-width:765px)");
 
   const styleNavBar = {
-    background: isSmScreen ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0)",
-    padding: "5px",
-    borderRadius: "10px",
-    margin: "0 auto",
-    boxShadow: isSmScreen ? "0 0 10px rgba(0, 0, 0, 0.5)" : "0 0 10px rgba(0, 0, 0, 0)",
+    background: isSmScreen ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0)",
     position: "fixed",
+    margin : "0px"
   };
 
   const executeScroll = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
-  };
+  };  
 
   const drawerContent = (
     <List>
@@ -87,7 +85,7 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
 
   return (
     <>
-      <AppBar position="static" style={styleNavBar} className={navColour ? "sticky" : "navbar"}>
+      <AppBar   position="static" style={styleNavBar} >
         <Toolbar>
           {isSmScreen ? (
             <>
@@ -96,10 +94,11 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
                 color="inherit"
                 aria-label="menu"
                 onClick={toggleDrawer(true)}
+                
               >
-                <MenuIcon />
+                <MenuIcon  />
               </IconButton>
-              <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+              <Drawer   anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} >
                 {drawerContent}
               </Drawer>
             </>
@@ -122,6 +121,7 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
           )}
         </Toolbar>
       </AppBar>
+      
     </>
   );
 };

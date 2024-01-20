@@ -16,7 +16,7 @@ const Skills = forwardRef((props, ref) => {
         style={{
           fontSize: "2.9em",
           color: "white",
-          paddingLeft: "40%",
+          textAlign: "center",
           paddingBottom: "70px",
           paddingTop: "150px",
         }}
@@ -26,18 +26,18 @@ const Skills = forwardRef((props, ref) => {
       <div
         style={{
           display: "flex",
-          paddingLeft: "140px",
-          paddingBottom: "500px",
+          justifyContent: "center",
+          flexWrap: "wrap", // Allow items to wrap to the next line on smaller screens
+          padding: "0 10px", // Added padding for better spacing on smaller screens
         }}
       >
-       <Tooltip title="C++" placement="right">
         <CgCPlusPlus className="tech-icons" />
-        </Tooltip> 
         <DiPython className="tech-icons" />
         <DiJavascript1 className="tech-icons" />
         <DiReact className="tech-icons" />
         <DiNodejs className="tech-icons" />
         <DiGit className="tech-icons" />
+      
       </div>
     </div>
   );

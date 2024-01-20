@@ -504,3 +504,17 @@ button:focus {
     padding-top: 0 !important;
   }
 }
+
+
+.listContainer {
+  background-color: rgb(219, 18, 18);
+  padding: 10px;
+}
+
+.listItem {
+  border-bottom: 1px solid white;
+}
+
+.listItemText {
+  color: rgb(255, 255, 255);
+}

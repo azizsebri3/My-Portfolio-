@@ -15,14 +15,20 @@ function App() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    minHeight: '100vh', 
+    backgroundAttachment: 'fixed', // Fixed background
+    minHeight: '100vh',
     width: '100%',
-    position: 'fixed', 
-    zIndex: -1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   };
+  
 
   const contentStyles = {
-    paddingTop: '0%', // Adjust this value based on your header height
+    width: '98%',
+    boxSizing: 'border-box',
+    padding: '10px', // Add padding for better spacing
   };
 
   // Create refs for the components you want to track
@@ -30,19 +36,14 @@ function App() {
   const aboutRef = useRef();
   const skillsRef = useRef();
 
-
   return (
-    <div>
-      <div style={containerStyles}></div>
+    <div style={containerStyles}>
       <div style={contentStyles}>
-        <Header introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef}/>
-        <Logo />
+        <Header introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef} />
         <Intro ref={introRef} />
         <About ref={aboutRef} />
         <Skills ref={skillsRef} />
-        <Footer   />
-        
-        
+        <Footer />
       </div>
     </div>
   );
