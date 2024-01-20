@@ -3,7 +3,12 @@ import logo from "../assets/logo.png";
 import Tilt from "react-parallax-tilt";
 
 const Logo = () => {
-  const imageStyles = {};
+  const imageStyles = {
+    paddingLeft: "55%", 
+    width: "42%" , 
+    paddingTop : "50px" 
+    
+  };
 
   return (
     <>
@@ -11,7 +16,7 @@ const Logo = () => {
         <img
           src={logo}
           alt="Portfolio Photo"
-          style={{ paddingLeft: "55%", width: "42%" , paddingTop : "50px"}}
+          style={imageStyles}
         />
       </div>
     </>

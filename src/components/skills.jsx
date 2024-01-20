@@ -7,7 +7,6 @@ import {
   DiNodejs,
   DiPython,
   DiGit,
-  DiJava,
 } from "react-icons/di";
 
 const Skills = forwardRef((props, ref) => {
@@ -31,8 +30,10 @@ const Skills = forwardRef((props, ref) => {
           paddingBottom: "500px",
         }}
       >
+       <Tooltip title="C++" placement="right">
         <CgCPlusPlus className="tech-icons" />
-        <DiPython className="tech-icons" icon={CgCPlusPlus} title="C++" />
+        </Tooltip> 
+        <DiPython className="tech-icons" />
         <DiJavascript1 className="tech-icons" />
         <DiReact className="tech-icons" />
         <DiNodejs className="tech-icons" />

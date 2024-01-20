@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Tooltip from "@mui/material/Tooltip";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -17,7 +18,7 @@ function Footer() {
           
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} Aziz Sebri</h3>
+          <Tooltip title="test" placement="top"><h3>Copyright © {year} Aziz Sebri</h3></Tooltip>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
