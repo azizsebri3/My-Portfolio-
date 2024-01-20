@@ -16,6 +16,7 @@ const About = forwardRef((props, ref) => {
     fontSize: "2.9em",
     color: "white",
     paddingBottom: "20px",
+    paddingTop : "200px"
   };
 
   const sectionStyles = {
@@ -32,7 +33,9 @@ const About = forwardRef((props, ref) => {
     fontSize: "1.5em",
     fontFamily: " 'Roboto  sans-serif",
     color: "white",
-    maxWidth : "1000px"
+    maxWidth : "1000px", 
+    paddingLeft : "70px" , 
+    paddingTop : "20px"
   };
 
   return (

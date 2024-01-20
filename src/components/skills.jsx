@@ -11,7 +11,7 @@ import {
 
 const Skills = forwardRef((props, ref) => {
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{paddingBottom : "370px"}}>
       <h1
         style={{
           fontSize: "2.9em",
@@ -28,7 +28,7 @@ const Skills = forwardRef((props, ref) => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap", // Allow items to wrap to the next line on smaller screens
-          padding: "0 10px", // Added padding for better spacing on smaller screens
+         // Added padding for better spacing on smaller screens
         }}
       >
         <CgCPlusPlus className="tech-icons" />

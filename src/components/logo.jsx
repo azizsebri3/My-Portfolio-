@@ -8,11 +8,11 @@ const Logo = () => {
 
   const imageStyles = {
     width: "100%", // Make the image take up 100% of its container's width
-    maxWidth: "400px", // Limit the image size to a maximum of 400 pixels
+    maxWidth: "700px", // Limit the image size to a maximum of 400 pixels
     height: "auto", // Maintain aspect ratio while resizing
     display: "inline-block", // Allow the image to appear inline
     float: "right", // Float the image to the right
-    paddingRight: "20px", // Add some right margin for spacing
+    paddingRight: "10px", // Add some right margin for spacing
   };
 
   // Media query for screens with a width less than or equal to 765px
@@ -27,7 +27,7 @@ const Logo = () => {
         margin: 0 auto; // Center the image horizontally
         display: block; // Make sure the image is treated as a block element
         padding-right: 0; // Remove right padding
-        padding-bottom : 180px
+        padding-bottom : 200px
       }
     }
   `;
