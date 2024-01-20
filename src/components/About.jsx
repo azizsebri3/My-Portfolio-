@@ -30,7 +30,7 @@ const About = forwardRef((props, ref) => {
 
   const textStyle = {
     fontSize: "1.5em",
-    fontFamily: "cursive",
+    fontFamily: " 'Roboto  sans-serif",
     color: "white",
     maxWidth : "1000px"
   };
