@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import {
   AppBar,
   Tabs,
@@ -11,14 +11,13 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import Intro from "./Intro";
-import "../style.css"
+import TemporaryDrawer from "./TemporaryDrawer"; // Import the TemporaryDrawer component
+import "../style.css";
 
 const Header = ({ introRef, aboutRef, skillsRef }) => {
   const [value, setValue] = useState(0);
   const [navColour, updateNavbar] = useState(false);
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -40,13 +39,12 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
 
     if (scrollPosition < aboutOffset) {
       setValue(0); // Intro
-    } else if ( scrollPosition > introOffset && scrollPosition < skillsOffset) {
+    } else if (scrollPosition > introOffset && scrollPosition < skillsOffset) {
       setValue(1); // About
     } else {
       setValue(2); // Skills
     }
   };
-
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -57,51 +55,21 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
   const isSmScreen = useMediaQuery("(max-width:765px)");
 
   const styleNavBar = {
-    background: isSmScreen ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0)",
+    background: "rgba(255, 255, 255, 0)",
     position: "fixed",
-    margin : "0px"
+    margin: "0px",
   };
 
   const executeScroll = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
 
-  const toggleDrawer = (open) => () => {
-    setDrawerOpen(open);
-  };  
-
-  const drawerContent = (
-    <List>
-      <ListItem button component="div" onClick={() => { executeScroll(introRef); setDrawerOpen(false); }}>
-        <ListItemText primary="Intro" />
-      </ListItem>
-      <ListItem button component="div" onClick={() => { executeScroll(aboutRef); setDrawerOpen(false); }}>
-        <ListItemText primary="About" />
-      </ListItem>
-      <ListItem button component="div" onClick={() => { executeScroll(skillsRef); setDrawerOpen(false); }}>
-        <ListItemText primary="Skills" />
-      </ListItem>
-      {/* Add more items as needed */}
-    </List>
-  );
-
   return (
     <>
-      <AppBar   position="static" style={styleNavBar} >
+      <AppBar position="static" style={styleNavBar}>
         <Toolbar>
           {isSmScreen ? (
-            <>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-                
-              >
-                <MenuIcon  />
-              </IconButton>
-              <Drawer   anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} >
-                {drawerContent}
-              </Drawer>
-            </>
+           <Fragment>
+              <TemporaryDrawer introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef} />
+           </Fragment>
           ) : (
             <Tabs
               sx={{ marginLeft: isSmScreen ? "5%" : "35%" }}
@@ -112,16 +80,15 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
                 style: { backgroundColor: "#E89E6F" },
               }}
             >
-            <Tab onClick={() => executeScroll(introRef)} id="intro" label="Intro" />
-            <Tab onClick={() => executeScroll(aboutRef)} id="about" label="About" />
-            <Tab onClick={() => executeScroll(skillsRef)} id="skills" label="Skills" />
-            <Tab /*  onClick={() => executeScroll(introRef)} */ id="projects" label="Projects" />
-            <Tab /* onClick={() => executeScroll(introRef)} */  id="contact" label="Contact" />
+              <Tab onClick={() => executeScroll(introRef)} id="intro" label="Intro" />
+              <Tab onClick={() => executeScroll(aboutRef)} id="about" label="About" />
+              <Tab onClick={() => executeScroll(skillsRef)} id="skills" label="Skills" />
+              <Tab /*  onClick={() => executeScroll(introRef)} */ id="projects" label="Projects" />
+              <Tab /* onClick={() => executeScroll(introRef)} */ id="contact" label="Contact" />
             </Tabs>
           )}
         </Toolbar>
       </AppBar>
-      
     </>
   );
 };

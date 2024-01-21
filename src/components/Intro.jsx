@@ -39,7 +39,7 @@ const Intro = forwardRef((props, ref) => {
   };
 
   const paragraphStyles = {
-    color: "white",
+    color: "#8892B0",
     fontSize: "20px",
     textAlign: {}, // Center text
   };

@@ -31,8 +31,8 @@ const About = forwardRef((props, ref) => {
 
   const textStyle = {
     fontSize: "1.5em",
-    fontFamily: " 'Roboto  sans-serif",
-    color: "white",
+    fontFamily: " Roboto,Helvetica Neue,sans-serif",
+    color: "#8892B0",
     maxWidth : "1000px", 
     paddingLeft : "70px" , 
     paddingTop : "20px"
