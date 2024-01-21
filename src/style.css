@@ -521,6 +521,7 @@ button:focus {
 
 
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  color : black !important ; 
   background-color: rgb(0, 0, 0) !important;
   display: flex !important; 
   justify-content: center !important;
