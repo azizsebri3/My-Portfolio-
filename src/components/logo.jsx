@@ -8,12 +8,14 @@ const Logo = () => {
 
   const imageStyles = {
     width: "100%", // Make the image take up 100% of its container's width
-    maxWidth: "700px", // Limit the image size to a maximum of 400 pixels
+    maxWidth: "400px", // Limit the image size to a maximum of 400 pixels
     height: "auto", // Maintain aspect ratio while resizing
     display: "inline-block", // Allow the image to appear inline
     float: "right", // Float the image to the right
-    paddingRight: "10px", // Add some right margin for spacing
-  };
+    paddingRight: "10px",
+    paddingLeft : "60px"
+  }
+
 
   // Media query for screens with a width less than or equal to 765px
   const mediaQueryStyles = `

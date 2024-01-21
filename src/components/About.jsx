@@ -16,7 +16,7 @@ const About = forwardRef((props, ref) => {
     fontSize: "2.9em",
     color: "white",
     paddingBottom: "20px",
-    paddingTop : "200px"
+    paddingTop : "300px"
   };
 
   const sectionStyles = {
