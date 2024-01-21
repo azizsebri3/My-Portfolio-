@@ -516,15 +516,15 @@ button:focus {
 }
 
 .listItemText {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
   background-color: rgb(0, 0, 0) !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: flex !important; 
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
   font-size: 30px;
 }
