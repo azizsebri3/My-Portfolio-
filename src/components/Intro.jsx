@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import { useTypewriter } from "react-simple-typewriter";
 import Logo from "./logo";
 import "../style.css"
+import {useMediaQuery} from "@mui/material"
 
 const Intro = forwardRef((props, ref) => {
   const [typeEffect] = useTypewriter({
@@ -11,24 +12,38 @@ const Intro = forwardRef((props, ref) => {
     deleteSpeed: 120,
   });
 
-  const introStyles = {
-    display: 'flex',
-    height: '100vh',
-    marginLeft: '50px',
-    flexWrap: 'wrap',
-    alignContent: 'stretch',
-    justifyContent: 'spaceEvenly',
-    alignItems: 'center',
-    paddinfBottom : "1000px" , 
+  const isSm = useMediaQuery("(max-width:765px)");
+  const introStyles = isSm
+  ? {
+      display: 'flex',
+      flexDirection: 'column',
+      margin: 60,
+      alignItems: 'center',
+      fontWeight: 'bold',
+      color: 'white',
+      fontSize: '18px',
+      textAlign: 'center'
+    }
+  : {
+      display: 'flex',
+      height: '100vh',
+      marginLeft: '200px',
+      flexWrap: 'wrap',
+      alignContent: 'stretch',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      
+    };
+ 
     
-    
-  };
+  
 
   const headingStyles = {
     fontWeight: "bold",
     color: "white",
     fontSize: "35px",
     textAlign: "left", // Center text
+    
   };
 
   const subheadingStyles = {
@@ -39,28 +54,33 @@ const Intro = forwardRef((props, ref) => {
   };
 
   const paragraphStyles = {
-    color: "#8892B0",
+    color: "white",
     fontSize: "20px",
     textAlign: {}, // Center text
+    ...(isSm &&{textAlign : "center"}) , 
   };
+  
 
   // Media query for screens with a width less than or equal to 768px
   const mediaQuery = `@media (max-width: 765px) {
+    display : flex ; 
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-left: 0; // Remove the left margin on smaller screens
     margin-top : auto ; 
+    
   }`;
 
   return (
-    <section ref={ref} style={{ ...introStyles, ...getMediaQueryStyles() }}> 
+    <section ref={ref} style={introStyles}> 
       <h1 style={headingStyles}>
         Hi There! <p className="wave">👋🏻 </p>  <br />
         <span style={subheadingStyles}>
           {" "}
-          <span style={{ color: "white " }}>I am </span> {typeEffect}
-        </span>
+          <span style={{ color: "white " , ...(isSm &&{fontSize : "35px"}) ,   }}>I am </span>
+          <span style={{...(isSm &&{fontSize : "35px"})}}>{typeEffect}</span>
+          </span>
         <p style={paragraphStyles}>
         I'm passionate about the MERN stack! 🚀<br />
         Currently diving deep into <br />

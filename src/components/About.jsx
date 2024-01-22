@@ -1,7 +1,38 @@
-import React, { forwardRef } from "react";
-import isima from "../assets/logo-isima600.png";
+import React, { forwardRef, useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useMediaQuery } from "@mui/material";
 
 const About = forwardRef((props, ref) => {
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const threshold = window.innerHeight / 2;
+
+      if (scrollY > threshold) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    // Set the initial animation state
+    controls.start({ opacity: 0, y: 50 });
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 20, transition: { duration: 0.8, delay: 0.2 } },
+  };
+
   const containerStyles = {
     paddingTop: "20%",
     width: "100%",
@@ -9,14 +40,14 @@ const About = forwardRef((props, ref) => {
     flexDirection: "column",
     alignItems: "center",
     padding: "0 10px",
-    alignText : "center" // Added padding for better spacing on smaller screens
+    alignText: "center",
   };
 
   const headingStyles = {
     fontSize: "2.9em",
     color: "white",
     paddingBottom: "20px",
-    paddingTop : "300px"
+    paddingTop: "100px",
   };
 
   const sectionStyles = {
@@ -28,19 +59,30 @@ const About = forwardRef((props, ref) => {
     color: "white",
     fontSize: "2em",
   };
+  const isSm = useMediaQuery("(max-width:765px)");
 
   const textStyle = {
-    fontSize: "1.5em",
-    fontFamily: " Roboto,Helvetica Neue,sans-serif",
-    color: "#8892B0",
-    maxWidth : "1000px", 
-    paddingLeft : "70px" , 
-    paddingTop : "20px"
+    fontSize: "20px",
+    fontFamily: "sans-serif",
+    color: "white",
+    maxWidth: "1000px",
+    ...(!isSm && {
+      paddingLeft: "70px"
+    }),
+    paddingTop: "20px"
   };
+  
+
 
   return (
-    <div ref={ref} style={containerStyles}>
-      <h1 style={headingStyles}>
+    <motion.div
+      ref={ref}
+      style={containerStyles}
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+       <h1 style={headingStyles}>
         LET ME <span style={{ color: "#EAA16E" }}> INTRODUCE </span> MYSELF
       </h1>
 
@@ -80,7 +122,7 @@ const About = forwardRef((props, ref) => {
           the 7901 teams worldwide in IEEEXtreme.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 });
 

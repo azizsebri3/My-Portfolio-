@@ -29,7 +29,7 @@ const Logo = () => {
         margin: 0 auto; // Center the image horizontally
         display: block; // Make sure the image is treated as a block element
         padding-right: 0; // Remove right padding
-        padding-bottom : 200px
+        padding-bottom : 100px
       }
     }
   `;

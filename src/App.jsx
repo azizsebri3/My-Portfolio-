@@ -16,12 +16,7 @@ function App() {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed', // Fixed background
-    minHeight: '100vh',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    
   };
   
 
