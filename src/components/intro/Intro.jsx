@@ -2,7 +2,7 @@ import React, { forwardRef, useState, useEffect } from "react";
 import { useTypewriter } from "react-simple-typewriter";
 import Logo from "./logo";
 import { motion, useAnimation } from "framer-motion";
-import "../style.css";
+import "../../style.css";
 import { useMediaQuery } from "@mui/material";
 
 const Intro = forwardRef((props, ref) => {
@@ -81,7 +81,7 @@ const Intro = forwardRef((props, ref) => {
   };
 
   return (
-    <motion.section
+    <motion.div
       ref={ref}
       style={introStyles}
       initial="hidden"
@@ -108,7 +108,7 @@ const Intro = forwardRef((props, ref) => {
       </h1>
 
       <Logo />
-    </motion.section>
+    </motion.div>
   );
 });
 

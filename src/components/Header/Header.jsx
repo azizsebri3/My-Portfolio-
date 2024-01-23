@@ -8,7 +8,7 @@ import {
  
 } from "@mui/material";
 import TemporaryDrawer from "./TemporaryDrawer"; // Import the TemporaryDrawer component
-import "../style.css";
+import "../../style.css";
 import { width } from "@mui/system";
 
 const Header = ({ introRef, aboutRef, skillsRef , contactRef }) => {
