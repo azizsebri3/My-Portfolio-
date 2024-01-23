@@ -5,22 +5,9 @@ import back from './assets/back.jpg';
 import Intro from "./components/Intro";
 import Skills from "./components/skills";
 import Footer from "./components/Footer";
-import SplashScreen from './components/SplashScreen ';
 import Contact from './components/Contact';
 
 function App() {
-  const [loadTime, setLoadTime] = useState(null);
-
-  useEffect(() => {
-    const loadStart = window.performance.timing.navigationStart;
-    const loadEnd = window.performance.timing.loadEventEnd;
-
-    if (loadStart && loadEnd) {
-      const totalTime = loadEnd - loadStart;
-      setLoadTime(totalTime);
-    }
-  }, []); // Run the effect only once on component mount
-
 
   const contentStyles = {
     backgroundImage : `url(${back})` ,
@@ -40,9 +27,6 @@ function App() {
 
   return (
     <>
-    {loadTime !== null ? (<SplashScreen />)
-     : (
-      
       <div style={contentStyles}>
         <Header introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef} contactRef={contactRef} />
         <Intro ref={introRef} />
@@ -51,7 +35,6 @@ function App() {
         <Contact ref={contactRef}/>
         <Footer />
       </div>
-     )}
     </>
   );
 }
