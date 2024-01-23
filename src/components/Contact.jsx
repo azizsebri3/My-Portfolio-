@@ -7,6 +7,7 @@ import "../index.css";
 const Contact = forwardRef((props, ref) => {
   const form = useRef();
   const [isAlertVisible, setAlertVisibility] = useState(false);
+  const [alertSeverity, setAlertSeverity] = useState('success');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,14 +20,19 @@ const Contact = forwardRef((props, ref) => {
       .sendForm(serviceId, templateId, form.current, publicKey)
       .then(
         (result) => {
+          setAlertSeverity('success');
           setAlertVisibility(true);
           setTimeout(() => {
             setAlertVisibility(false);
           }, 3000);
         },
         (error) => {
-          alert('problem');
-          console.log(error.text);
+          setAlertSeverity('error');
+          setAlertVisibility(true);
+          setTimeout(() => {
+            setAlertVisibility(false);
+          }, 3000);
+
         }
       );
   };
@@ -45,13 +51,13 @@ const Contact = forwardRef((props, ref) => {
         <input type='submit' value='Submit' id='input-submit' />
       </form>
 
-        <Snackbar open={isAlertVisible} autoHideDuration={3000} >
+        <Snackbar open={isAlertVisible} autoHideDuration={3000} onClose={() => setAlertVisibility(false)} >
         <Alert
-          severity="success"
+          severity={alertSeverity}
           variant="filled"
           sx={{ width: '200px' }}
         >
-          Sent
+           {alertSeverity === 'success' ? 'Email sent successfully' : 'Error sending email'}
         </Alert>
       </Snackbar>
     </div>
