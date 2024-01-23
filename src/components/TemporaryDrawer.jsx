@@ -14,7 +14,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import CodeIcon from '@mui/icons-material/Code';
 import MailIcon from '@mui/icons-material/Mail';
 
-export default function TemporaryDrawer({ introRef, aboutRef, skillsRef } ) {
+export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contactRef } ) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -30,10 +30,9 @@ export default function TemporaryDrawer({ introRef, aboutRef, skillsRef } ) {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
   const icons = [<PlayArrowIcon />, <InfoIcon />, <CodeIcon />, <MailIcon />];
-  const Refs = [introRef,aboutRef, skillsRef,skillsRef];
+  const Refs = [introRef,aboutRef, skillsRef,contactRef];
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}

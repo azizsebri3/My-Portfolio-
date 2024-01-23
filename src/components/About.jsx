@@ -13,7 +13,8 @@ const About = forwardRef((props, ref) => {
 
       if (scrollY > threshold) {
         setIsVisible(true);
-      } else {
+      } else
+      {
         setIsVisible(false);
       }
     };

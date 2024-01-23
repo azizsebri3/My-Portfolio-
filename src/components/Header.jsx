@@ -5,17 +5,13 @@ import {
   Tab,
   Toolbar,
   useMediaQuery,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
+ 
 } from "@mui/material";
-import Intro from "./Intro";
 import TemporaryDrawer from "./TemporaryDrawer"; // Import the TemporaryDrawer component
 import "../style.css";
+import { width } from "@mui/system";
 
-const Header = ({ introRef, aboutRef, skillsRef }) => {
+const Header = ({ introRef, aboutRef, skillsRef , contactRef }) => {
   const [value, setValue] = useState(0);
   const [navColour, updateNavbar] = useState(false);
 
@@ -36,13 +32,17 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
     const introOffset = introRef.current?.offsetTop || 0;
     const aboutOffset = aboutRef.current?.offsetTop || 0;
     const skillsOffset = skillsRef.current?.offsetTop || 0;
+    const contactOffset = contactRef.current?.offsetTop || 0;
 
     if (scrollPosition < aboutOffset) {
       setValue(0); // Intro
     } else if (scrollPosition > introOffset && scrollPosition < skillsOffset) {
       setValue(1); // About
-    } else {
+    } else if (scrollPosition >aboutOffset && scrollPosition < contactOffset ) {
       setValue(2); // Skills
+    }
+    else{
+      setValue(3); // Contact
     }
   };
 
@@ -55,20 +55,25 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
   const isSmScreen = useMediaQuery("(max-width:765px)");
 
   const styleNavBar = {
-    background: "rgba(255, 255, 255, 0)",
-    position: "fixed",
+    backgroundColor: "rgba(255, 255, 255, 0)" , 
     margin: "0px",
+    backdropFilter: window.scrollY >= 20 ? "blur(5px)" : "blur(0px)", // Adjust the division factor for the blur effect
+    transition: "backdrop-filter 0.3s ease",// Adjust the division factor for the blur effect
+    display : "fixed" , 
+    width : "80" , 
+    marginLeft : '35%'
+   
   };
 
   const executeScroll = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
 
   return (
     <>
-      <AppBar position="static" style={styleNavBar}>
+      <AppBar style={styleNavBar}>
         <Toolbar>
           {isSmScreen ? (
            <Fragment>
-              <TemporaryDrawer introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef} />
+              <TemporaryDrawer introRef={introRef} aboutRef={aboutRef} skillsRef={skillsRef} contactRef={contactRef} />
            </Fragment>
           ) : (
             <Tabs
@@ -83,8 +88,7 @@ const Header = ({ introRef, aboutRef, skillsRef }) => {
               <Tab onClick={() => executeScroll(introRef)} id="intro" label="Intro" />
               <Tab onClick={() => executeScroll(aboutRef)} id="about" label="About" />
               <Tab onClick={() => executeScroll(skillsRef)} id="skills" label="Skills" />
-              <Tab /*  onClick={() => executeScroll(introRef)} */ id="projects" label="Projects" />
-              <Tab /* onClick={() => executeScroll(introRef)} */ id="contact" label="Contact" />
+              <Tab onClick={() => executeScroll(contactRef)}  id="contact" label="Contact" />
             </Tabs>
           )}
         </Toolbar>

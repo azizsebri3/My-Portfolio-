@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import { CgCPlusPlus } from "react-icons/cg";
-import Tooltip from "@mui/material/Tooltip";
 import {
   DiJavascript1,
   DiReact,
