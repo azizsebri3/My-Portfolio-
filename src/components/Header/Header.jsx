@@ -19,13 +19,8 @@ const Header = ({ introRef, aboutRef, skillsRef , contactRef }) => {
     setValue(newValue);
   };
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  const  scrollHandler = () => window.scrollY >= 20 ? updateNavbar(true) : updateNavbar(false) ; 
+    
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;

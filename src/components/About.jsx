@@ -11,12 +11,10 @@ const About = forwardRef((props, ref) => {
       const scrollY = window.scrollY || window.pageYOffset;
       const threshold = window.innerHeight / 2;
 
-      if (scrollY > threshold) {
-        setIsVisible(true);
-      } else
-      {
-        setIsVisible(false);
-      }
+      // setIsVisible ll framer motion bech ye5dem fi kol mara
+      scrollY > threshold && setIsVisible(true)
+        
+      
     };
 
     // Set the initial animation state
