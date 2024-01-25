@@ -60,6 +60,7 @@ export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contac
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            
           >
             {list(anchor)}
           </Drawer>

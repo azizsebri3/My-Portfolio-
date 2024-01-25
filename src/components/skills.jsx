@@ -7,10 +7,9 @@ import {
   DiPython,
   DiGit,
 } from "react-icons/di";
-
 const Skills = forwardRef((props, ref) => {
   return (
-    <div ref={ref} style={{paddingBottom : "370px"}}>
+    <div ref={ref} style={{ paddingBottom: "370px" }}>
       <h1
         style={{
           fontSize: "2.9em",
@@ -26,8 +25,7 @@ const Skills = forwardRef((props, ref) => {
         style={{
           display: "flex",
           justifyContent: "center",
-          flexWrap: "wrap", // Allow items to wrap to the next line on smaller screens
-         // Added padding for better spacing on smaller screens
+          flexWrap: "wrap",
         }}
       >
         <CgCPlusPlus className="tech-icons" />
@@ -36,7 +34,6 @@ const Skills = forwardRef((props, ref) => {
         <DiReact className="tech-icons" />
         <DiNodejs className="tech-icons" />
         <DiGit className="tech-icons" />
-      
       </div>
     </div>
   );

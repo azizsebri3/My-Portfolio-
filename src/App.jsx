@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Header from "./components/Header/Header"
 import About from "./components/About";
 import back from './assets/back.jpg';
@@ -32,7 +32,7 @@ function App() {
         <Intro ref={introRef} />
         <About ref={aboutRef} />
         <Skills ref={skillsRef} />
-        <Contact ref={contactRef}/>
+        <Contact ref={contactRef} />
         <Footer />
       </div>
     </>

@@ -45,18 +45,22 @@ const About = forwardRef((props, ref) => {
   const headingStyles = {
     fontSize: "2.9em",
     color: "white",
-    paddingBottom: "20px",
-    paddingTop: "100px",
+    
   };
 
   const sectionStyles = {
     width: "100%",
     paddingBottom: "20px",
+    display : "flex",
+    flexDirection : "column"
   };
 
   const spanStyles = {
     color: "white",
-    fontSize: "2em",
+    fontSize: "1.7em",
+    fontWeight: 'bolder',
+    display : "flex",
+    flexDirection : "column",
   };
   const isSm = useMediaQuery("(max-width:765px)");
 
@@ -87,7 +91,7 @@ const About = forwardRef((props, ref) => {
 
       <div style={sectionStyles}>
         <span style={spanStyles}>
-          <b>🖥️ Academic Background: </b>
+          🖥️ Academic Background: 
         </span>
         <p style={textStyle}>
           Exploring the complexities of algorithms and data structures at the
@@ -99,7 +103,7 @@ const About = forwardRef((props, ref) => {
 
       <div style={sectionStyles}>
         <span style={spanStyles}>
-          <b>💡 Innovation and Creativity: </b>
+          💡 Innovation and Creativity: 
         </span>
         <p style={textStyle}>
           Driven by a passion for innovation, I believe in tackling challenges
@@ -110,7 +114,7 @@ const About = forwardRef((props, ref) => {
       </div>
 
       <div style={sectionStyles}>
-        <span style={spanStyles}>🔧 Problem-Solving Skills:</span>
+        <span style={spanStyles}> 🔧 Problem-Solving Skills: </span>
         <p style={textStyle}>
           With a knack for analytical thinking and a proven track record of
           success in problem-solving, I have consistently approached complex

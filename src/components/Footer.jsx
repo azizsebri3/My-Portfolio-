@@ -23,10 +23,6 @@ function Footer() {
           {!isSm ? (
             <>
               <Col md="4" className="footer-copywright">
-                <img src={QrCode} alt="QrCode" style={{ width: "100px", backgroundColor: '#EAA16E' }} />
-                <p style={{ color: 'white' }}>Scan Me With Phone</p>
-              </Col>
-              <Col md="4" className="footer-copywright">
                 <Tooltip title="test" placement="top"><h3>Copyright © {year} Aziz Sebri</h3></Tooltip>
               </Col>
               <Col md="4" className="footer-body">

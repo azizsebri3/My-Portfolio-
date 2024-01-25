@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@material-tailwind/react": "^2.1.8",
     "@mui/icons-material": "^5.15.5",
     "@mui/material": "^5.15.3",
     "@mui/system": "^5.15.3",
@@ -27,7 +28,8 @@
     "react-router-dom": "^6.21.1",
     "react-simple-typewriter": "^5.0.1",
     "react-tilt": "^1.0.2",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "tw-elements": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
