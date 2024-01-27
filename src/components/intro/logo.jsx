@@ -1,43 +1,31 @@
 import React from "react";
 import logo from "../../assets/logo.png";
+import { useMediaQuery } from "@mui/material";
 
+// ...(isSm ? {width: 170%} : width: "100%" )
 const Logo = () => {
   const containerStyles = {
     textAlign: "center",
   };
+  
+const isSm = useMediaQuery("(max-width:765px)");
 
   const imageStyles = {
-    width: "100%", // Make the image take up 100% of its container's width
-    maxWidth: "400px", // Limit the image size to a maximum of 400 pixels
+    ...(isSm ? { width: "119%" } : { width: "100%" }),
+    maxWidth: "580px", // Limit the image size to a maximum of 400 pixels
     height: "auto", // Maintain aspect ratio while resizing
     display: "inline-block", // Allow the image to appear inline
     float: "right", // Float the image to the right
     paddingRight: "10px",
-    paddingLeft : "60px"
+    ...(isSm ? {paadingLeft: '140px'} : {paddingLeft: "60px"}  )
+    
   }
 
-
-  // Media query for screens with a width less than or equal to 765px
-  const mediaQueryStyles = `
-    @media (max-width: 765px) {
-      .logoContainer {
-        text-align: center;
-      }
-
-      .logoImage {
-        float: none; // Reset the float property
-        margin: 0 auto; // Center the image horizontally
-        display: block; // Make sure the image is treated as a block element
-        padding-right: 0; // Remove right padding
-        padding-bottom : 100px
-      }
-    }
-  `;
+  
 
   return (
     <div style={containerStyles} className="logoContainer">
       <img src={logo} alt="Portfolio Photo" style={imageStyles} className="logoImage" />
-      <style>{mediaQueryStyles}</style>
     </div>
   );
 };

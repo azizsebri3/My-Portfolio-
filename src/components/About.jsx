@@ -1,6 +1,8 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
+import IEEE from "../assets/IEEE.jpg";
+import Ai from "../assets/Ai.jpg";
 
 const About = forwardRef((props, ref) => {
   const controls = useAnimation();
@@ -12,9 +14,7 @@ const About = forwardRef((props, ref) => {
       const threshold = window.innerHeight / 2;
 
       // setIsVisible ll framer motion bech ye5dem fi kol mara
-      scrollY > threshold && setIsVisible(true)
-        
-      
+      scrollY > threshold && setIsVisible(true);
     };
 
     // Set the initial animation state
@@ -38,44 +38,76 @@ const About = forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center", // Center vertically and horizontally
     padding: "0 10px",
-    alignText: "center",
+    textAlign: "center", // Corrected typo in 'textAlign'
   };
 
   const headingStyles = {
-    fontSize: "2.9em",
+    fontSize: "3.5em",
     color: "white",
-    
   };
 
   const sectionStyles = {
     width: "100%",
     paddingBottom: "20px",
-    display : "flex",
-    flexDirection : "column"
+    display: "flex",
+    flexDirection: "column",
   };
 
   const spanStyles = {
     color: "white",
     fontSize: "1.7em",
-    fontWeight: 'bolder',
-    display : "flex",
-    flexDirection : "column",
+    fontWeight: "bolder",
+    display: "flex",
+    flexDirection: "column",
   };
+
   const isSm = useMediaQuery("(max-width:765px)");
 
   const textStyle = {
     fontSize: "20px",
-    fontFamily: "sans-serif",
+    fontFamily: "Roboto, sans-serif",
     color: "white",
     maxWidth: "1000px",
     ...(!isSm && {
-      paddingLeft: "70px"
+      paddingLeft: "500px",
     }),
-    paddingTop: "20px"
+    paddingTop: "20px",
+  };
+
+  const imageStyles = {
+    ...(isSm
+      ? { flex: "0 0 119%", maxWidth: "580px" }
+      : { flex: "0 0 100%", maxWidth: "580px" }),
+    height: "auto",
+    display: "flex",
+    justifyContent: "flex-end", // Align to the right
+    borderRadius: "150px",
+    paddingTop: "30px",
+    paddingBottom: "30px",
+    position: "relative", // Add position relative to the container
+    overflow: "hidden", // Hide overflow to prevent placeholder from being visible
+    '&:hover': {
+      '.image-placeholder': {
+        opacity: 1,
+      },
+      '.responsive-image': {
+        transform: 'scale(1.1)',
+      },
+    },
+  };
+  
+  // Add corresponding styles for AOS (Animate On Scroll) animation if needed
+  const aosStyles = {
+    '[data-aos="fade-up"]': {
+      /* Your AOS styles here */
+    },
   };
   
 
+  
+  
 
   return (
     <motion.div
@@ -85,26 +117,22 @@ const About = forwardRef((props, ref) => {
       animate={isVisible ? "visible" : "hidden"}
       variants={containerVariants}
     >
-       <h1 style={headingStyles}>
+      <h1 style={headingStyles}>
         LET ME <span style={{ color: "#EAA16E" }}> INTRODUCE </span> MYSELF
       </h1>
 
       <div style={sectionStyles}>
-        <span style={spanStyles}>
-          🖥️ Academic Background: 
-        </span>
+        <span style={spanStyles}>🖥️ Academic Background:</span>
         <p style={textStyle}>
-          Exploring the complexities of algorithms and data structures at the
-          Higher Institute of Computer Science of Mahdia, I've mastered crucial
-          skills in C++ and Python, solidifying a robust foundation in
+          Studying at the Higher Institute of Computer Science of Mahdia, I've
+          delved into the intricacies of algorithms and data structures.
+          Proficient in C++ and Python, I've built a strong foundation in both
           theoretical concepts and practical applications.
         </p>
       </div>
 
       <div style={sectionStyles}>
-        <span style={spanStyles}>
-          💡 Innovation and Creativity: 
-        </span>
+        <span style={spanStyles}>💡 Innovation and Creativity:</span>
         <p style={textStyle}>
           Driven by a passion for innovation, I believe in tackling challenges
           with fresh perspectives. I developed a machine learning model to
@@ -112,19 +140,26 @@ const About = forwardRef((props, ref) => {
           local startup.
         </p>
       </div>
+      <div>
+        <img
+          src={Ai}
+          alt="Portfolio Photo"
+          style={imageStyles}
+          className="logoImage"
+        />
+      </div>
 
       <div style={sectionStyles}>
         <span style={spanStyles}> 🔧 Problem-Solving Skills: </span>
         <p style={textStyle}>
-          With a knack for analytical thinking and a proven track record of
-          success in problem-solving, I have consistently approached complex
-          issues with a strategic mindset. This ability has not only
-          contributed to my academic achievements but has also been honed
-          through active participation in events like IEEEXtreme 17.0💻, where I
-          secured the 34th place among 986 Tunisian teams and rank 1095 among
-          the 7901 teams worldwide in IEEEXtreme.
+          I'm skilled at solving complex problems with a strategic mindset.
+          Achieved success in academics and ranked 34th in IEEEXtreme 17.0💻
+          among 986 Tunisian teams, 1095 worldwide among 7901 teams.
         </p>
       </div>
+      <motion.div>
+        <img src={IEEE} alt="Portfolio Photo" style={imageStyles} />
+      </motion.div>
     </motion.div>
   );
 });

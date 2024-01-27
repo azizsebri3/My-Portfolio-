@@ -26,6 +26,7 @@ const Skills = forwardRef((props, ref) => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
+          fontSize : "1.2em"
         }}
       >
         <CgCPlusPlus className="tech-icons" />

@@ -1,10 +1,7 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Tooltip from "@mui/material/Tooltip";
-import QrCode from "../assets/frame.png";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
