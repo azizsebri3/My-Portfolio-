@@ -450,18 +450,18 @@ button:focus {
 }
 
 .tech-icons {
-  font-size: 10em !important;
-  margin: 15px !important;
-  padding: 40px !important;
-  opacity: 0.93 !important;
-  border: 1.3px solid rgba(255, 255, 255, 0.637) !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 50% !important; /* Make it circular */
-  display: table !important;
-  box-shadow: 2px 5px 4px 3px rgba(244, 237, 229, 0.137) !important;
-  overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
+  font-size: 10em;
+  margin: 15px;
+  padding: 40px;
+  opacity: 0.93;
+  border: 1.3px solid rgba(255, 255, 255, 0.637);
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%; /* Make it circular */
+  display: table;
+  box-shadow: 2px 5px 4px 3px rgba(244, 237, 229, 0.137);
+  overflow: hidden;
+  transition: all 0.4s ease 0s;
   color: #eaa16e;
   position: relative;
   z-index: 1;
@@ -469,23 +469,17 @@ button:focus {
 
 @media (max-width: 767px) {
   .tech-icons {
-    margin: 10px !important;
+    margin: 10px;
   }
-}
-.container {
-  position: relative; /* Make the parent container relative */
 }
 
 .tech-icons:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  border: 2.2px solid #e89e6f !important;
+  transform: scale(1.2) rotateY(20deg); /* Add a 3D transform on hover */
+  overflow: hidden;
+  border: 2.2px solid #e89e6f;
   color: #e89e6f;
 }
-.tech-icon-images {
-  padding: 25px !important;
-  line-height: 1.6 !important;
-}
+
 
 .quote-card-view {
   border: none !important;

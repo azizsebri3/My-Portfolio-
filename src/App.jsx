@@ -10,12 +10,13 @@ import Contact from './components/Contact';
 function App() {
 
   const contentStyles = {
-    backgroundImage : `url(${back})` ,
+    backgroundImage: `url(${back})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundAttachement : 'fixed',
-    overflowX : "hidden",
+    backgroundAttachment: 'fixed', // Note the corrected spelling
+    overflowX: 'hidden',
+    height: '100vh',
   
   };
   

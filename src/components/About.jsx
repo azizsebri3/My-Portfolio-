@@ -57,7 +57,7 @@ const About = forwardRef((props, ref) => {
 
   const spanStyles = {
     color: "white",
-    fontSize: "1.7em",
+    fontSize: "2em",
     fontWeight: "bolder",
     display: "flex",
     flexDirection: "column",
@@ -77,46 +77,22 @@ const About = forwardRef((props, ref) => {
   };
 
   const imageStyles = {
-    ...(isSm
-      ? { flex: "0 0 119%", maxWidth: "580px" }
-      : { flex: "0 0 100%", maxWidth: "580px" }),
+    flex: "0 1 100%",
+    maxWidth: isSm ? "100%" : "580px",
     height: "auto",
     display: "flex",
     justifyContent: "flex-end", // Align to the right
-    borderRadius: "150px",
     paddingTop: "30px",
-    paddingBottom: "30px",
+    paddingBottom: "50px",
     position: "relative", // Add position relative to the container
-    overflow: "hidden", // Hide overflow to prevent placeholder from being visible
-    '&:hover': {
-      '.image-placeholder': {
-        opacity: 1,
-      },
-      '.responsive-image': {
-        transform: 'scale(1.1)',
-      },
-    },
+    overflow: "hidden", //   Hide overflow to prevent placeholder from being visible
+    border: "1.3px solid rgba(255, 255, 255, 0.637) " , 
+    boxShadow: "2px 5px 8px 8px rgba(244, 237, 229, 0.137)" , 
+    borderRadius: "50%"
   };
-  
-  // Add corresponding styles for AOS (Animate On Scroll) animation if needed
-  const aosStyles = {
-    '[data-aos="fade-up"]': {
-      /* Your AOS styles here */
-    },
-  };
-  
-
-  
-  
 
   return (
-    <motion.div
-      ref={ref}
-      style={containerStyles}
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-      variants={containerVariants}
-    >
+    <motion.div ref={ref} style={containerStyles} variants={containerVariants}>
       <h1 style={headingStyles}>
         LET ME <span style={{ color: "#EAA16E" }}> INTRODUCE </span> MYSELF
       </h1>
@@ -153,13 +129,13 @@ const About = forwardRef((props, ref) => {
         <span style={spanStyles}> 🔧 Problem-Solving Skills: </span>
         <p style={textStyle}>
           I'm skilled at solving complex problems with a strategic mindset.
-          Achieved success in academics and ranked 34th in IEEEXtreme 17.0💻
-          among 986 Tunisian teams, 1095 worldwide among 7901 teams.
+          Achieved success in academics and <b style={{color : "#EAA16E" }}> ranked 34th in IEEEXtreme 17.0💻
+          among 986 Tunisian teams </b>, 1095 worldwide among 7901 teams.
         </p>
       </div>
-      <motion.div>
+      <div>
         <img src={IEEE} alt="Portfolio Photo" style={imageStyles} />
-      </motion.div>
+      </div>
     </motion.div>
   );
 });

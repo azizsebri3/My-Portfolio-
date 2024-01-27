@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import { CgCPlusPlus } from "react-icons/cg";
+import { motion } from "framer-motion";
 import {
   DiJavascript1,
   DiReact,
@@ -10,7 +11,7 @@ import {
 const Skills = forwardRef((props, ref) => {
   return (
     <div ref={ref} style={{ paddingBottom: "370px" }}>
-      <h1
+      <h1 
         style={{
           fontSize: "2.9em",
           color: "white",
@@ -26,7 +27,9 @@ const Skills = forwardRef((props, ref) => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          fontSize : "1.2em"
+          fontSize : "1.2em" ,  
+          alignContent: "space-around",
+          flexDirection: "column" ,           
         }}
       >
         <CgCPlusPlus className="tech-icons" />

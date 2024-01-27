@@ -13,6 +13,8 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoIcon from '@mui/icons-material/Info';
 import CodeIcon from '@mui/icons-material/Code';
 import MailIcon from '@mui/icons-material/Mail';
+import { motion } from 'framer-motion';
+
 
 export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contactRef } ) {
   const [state, setState] = React.useState({
@@ -32,24 +34,32 @@ export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contac
   const icons = [<PlayArrowIcon />, <InfoIcon />, <CodeIcon />, <MailIcon />];
   const Refs = [introRef,aboutRef, skillsRef,contactRef];
   const list = (anchor) => (
-    <Box
+    <motion.div
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
     >
       <List>
-      {['Intro', 'About', 'Skills', 'Contact'].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton  onClick={() => scrollToSection(Refs[index])} >
-            <ListItemIcon>{icons[index]}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-
-    </Box>
+        {['Intro', 'About', 'Skills', 'Contact'].map((text, index) => (
+          <motion.div key={text} layout>
+            <ListItem disablePadding>
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <ListItemButton onClick={() => scrollToSection(Refs[index])}>
+                  <ListItemIcon>{icons[index]}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </motion.div>
+            </ListItem>
+          </motion.div>
+        ))}
+      </List>
+    </motion.div>
   );
+
 
   return (
     <div>
