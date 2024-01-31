@@ -61,53 +61,49 @@ const Contact = forwardRef((props, ref) => {
               <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
                 <div className="relative z-[1] block rounded-lg bg-[#00000000] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14">
                   <h2 style={{ color: "#EAA16E", fontSize: "40px" }}>
-                    Contact us
+                    Contact Me 
                   </h2>
                   <form ref={form} onSubmit={sendEmail}>
-  <div className="relative mb-6">
-    <input
-      type="text"
-      className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-      name="user_name"
-      
-    />
-    <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-      Name
-    </label>
-  </div>
-  <div className="relative mb-6">
-    <input
-      type="email"
-      className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-      name="user_email"
-      
-    />
-    <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-      Email address
-    </label>
-  </div>
-  <div className="relative mb-6">
-    <textarea
-      className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-      name="message"
-      rows="3"
-      
-    ></textarea>
-    <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-      Message
-    </label>
-  </div>
+                    <div className="relative mb-6">
+                      <input
+                        type="text"
+                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
+                        name="user_name"
+                      />
+                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
+                        Name
+                      </label>
+                    </div>
+                    <div className="relative mb-6">
+                      <input
+                        type="email"
+                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
+                        name="user_email"
+                      />
+                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
+                        Email address
+                      </label>
+                    </div>
+                    <div className="relative mb-6">
+                      <textarea
+                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
+                        name="message"
+                        rows="3"
+                      ></textarea>
+                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
+                        Message
+                      </label>
+                    </div>
 
-  <button
-    type="submit"
-    data-te-ripple-init
-    data-te-ripple-color="light"
-    className="inline-block w-full rounded bg-[#EAA16E] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#E69E6D] transition duration-150 ease-in-out hover:bg-[#EAA16E] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:bg-[#EAA16E] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:outline-none focus:ring-0 active:bg-[#EAA16E] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
-  >
-    Send
-  </button>
-</form>
-
+                    <button
+                      type="submit"
+                      data-te-ripple-init
+                      data-te-ripple-color="light"
+                      className="inline-block w-full rounded bg-[#EAA16E] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#E69E6D] transition duration-150 ease-in-out hover:bg-[#EAA16E] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:bg-[#EAA16E] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:outline-none focus:ring-0 active:bg-[#EAA16E] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
+                    >
+                      Send
+                    </button>
+                  </form>
                 </div>
               </div>
               <div className="md:mb-12 lg:mb-0">

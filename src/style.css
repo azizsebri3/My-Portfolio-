@@ -56,9 +56,7 @@ button:focus {
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  background: #000000;
-}
+
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -72,137 +70,8 @@ button:focus {
   border-radius: 12px;
 }
 
-/* --------- */
-/* Navbar Section  */
-/* --------- */
-.sticky {
-  background-color: transparent !important;
-  transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.1) !important;
-  backdrop-filter: blur(15px) !important;
-}
 
-.navbar {
-  position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
-}
 
-.navbar-toggler {
-  position: relative !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-}
-
-.navbar-toggler span {
-  display: block !important;
-  background-color: #be50f4 !important;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
-}
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0 !important;
-}
-
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transition: transform 0.35s ease-in-out !important;
-  transition: transform 0.35s ease-in-out !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(1) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(135deg) !important;
-  opacity: 0.9 !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(2) {
-  height: 12px !important;
-  visibility: hidden !important;
-  background-color: transparent !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(3) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(-135deg) !important;
-  opacity: 0.9 !important;
-}
-
-@media (max-width: 767px) {
-  .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important;
-  }
-  .navbar-nav .nav-item a::after {
-    display: none !important;
-  }
-}
-.navbar-brand {
-  color: rgb(250, 250, 250) !important;
-}
-
-.navbar-nav .nav-link {
-  color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-.nav-link {
-  padding: 0.8rem 1rem !important;
-}
-
-@media (max-width: 767px) {
-  .nav-link {
-    padding: 0.7rem 1rem !important;
-  }
-}
-
-.navbar-nav .nav-item {
-  position: relative;
-  margin-left: 20px;
-}
-
-.navbar-nav .nav-item a {
-  font-weight: 400;
-  transition: all 0.3s ease-out 0s;
-  position: relative;
-  z-index: 1;
-}
-
-.navbar-nav .nav-item a::after {
-  content: "";
-  position: relative;
-  display: block;
-  height: 5px;
-  width: 0;
-  border-radius: 16px;
-  background: #c95bf5;
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
-}
-
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
-}
-
-/* --------- */
-/* Home section */
-/* --------- */
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
   animation-duration: 2.1s; /* Change to speed up or slow down */
@@ -237,113 +106,8 @@ button:focus {
     transform: rotate(0deg);
   }
 }
-#tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100%;
-  height: 100%;
-}
 
-.home-header {
-  padding-top: 80px !important;
-}
 
-.home-section {
-  position: relative;
-  z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
-}
-
-.home-content {
-  padding: 9rem 0 2rem !important;
-  color: whitesmoke;
-  text-align: left;
-}
-
-.heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
-}
-
-.heading-name {
-  font-size: 2.5em !important;
-  padding-left: 45px !important;
-}
-
-.main-name {
-  color: #cd5ff8;
-}
-
-.Typewriter__wrapper {
-  font-size: 2.2em !important;
-  color: #be6adf !important;
-  font-weight: 600 !important;
-}
-.Typewriter__cursor {
-  font-size: 2.4em !important;
-  color: #b562d6 !important;
-}
-
-@media (max-width: 767px) {
-  .Typewriter__wrapper {
-    font-size: 1.4em !important;
-    font-weight: 500 !important;
-    position: absolute !important;
-  }
-  .Typewriter__cursor {
-    display: none !important;
-  }
-}
-
-.myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
-}
-
-@media (max-width: 767px) {
-  .myAvtar {
-    padding-top: 2em !important;
-    padding-bottom: 2em !important;
-  }
-}
-
-.home-about-section {
-  position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
-}
-
-.home-about-description {
-  color: white !important;
-  padding-top: 100px !important;
-  padding-bottom: 20px !important;
-  text-align: center;
-}
-
-.home-about-body {
-  padding-top: 50px;
-  font-size: 1.2em !important;
-  text-align: left;
-}
-
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: white !important;
-}
-
-.home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
-}
 
 .home-social-icons {
   position: relative !important;
@@ -358,30 +122,8 @@ button:focus {
   transition: 0.5s !important;
 }
 
-.home-social-icons::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #68187a;
-  transition: 0.5s;
-  transform: scale(0.9);
-  z-index: -1;
-}
 
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #801f95;
-}
 
-.home-social-icons:hover {
-  color: #87209e;
-  box-shadow: 0 0 5px #87209e;
-  text-shadow: 0 0 2px #87209e;
-}
 
 .social-icons {
   display: inline-block !important;
@@ -389,9 +131,6 @@ button:focus {
   padding-left: 15px;
 }
 
-.icon-colour {
-  color: #700c86 !important;
-}
 
 /* --------- */
 /* Footer */
@@ -433,35 +172,22 @@ button:focus {
   padding: 0 !important;
 }
 
-.blockquote-footer {
-  color: #a588c0 !important;
-}
 
-/* --------- */
-/* About */
-/* --------- */
 
-.about-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
 
 .tech-icons {
-  font-size: 10em;
-  margin: 15px;
-  padding: 40px;
-  opacity: 0.93;
-  border: 1.3px solid rgba(255, 255, 255, 0.637);
-  vertical-align: middle;
-  text-align: center;
-  border-radius: 50%; /* Make it circular */
-  display: table;
-  box-shadow: 2px 5px 4px 3px rgba(244, 237, 229, 0.137);
-  overflow: hidden;
-  transition: all 0.4s ease 0s;
+  font-size: 10em !important;
+  margin: 15px !important;
+  padding: 40px !important;
+  opacity: 0.93 !important;
+  border: 1.3px solid rgba(255, 255, 255, 0.637) !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 50% !important; /* Make it circular */
+  display: table !important;
+  box-shadow: 2px 5px 4px 3px rgba(244, 237, 229, 0.137) !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease 0s !important;
   color: #eaa16e;
   position: relative;
   z-index: 1;
@@ -469,49 +195,24 @@ button:focus {
 
 @media (max-width: 767px) {
   .tech-icons {
-    margin: 10px;
+    margin: 10px !important;
   }
+}
+.container {
+  position: relative; /* Make the parent container relative */
 }
 
 .tech-icons:hover {
-  transform: scale(1.2) rotateY(20deg); /* Add a 3D transform on hover */
-  overflow: hidden;
-  border: 2.2px solid #e89e6f;
+  transform: scale(1.05) !important;
+  overflow: hidden !important;
+  border: 2.2px solid #e89e6f !important;
   color: #e89e6f;
 }
-
-
-.quote-card-view {
-  border: none !important;
-  color: white !important;
-  background-color: transparent !important;
+.tech-icon-images {
+  padding: 25px !important;
+  line-height: 1.6 !important;
 }
 
-.about-activity {
-  list-style: none !important;
-  text-align: left !important;
-  padding-left: 1px !important;
-}
-
-@media (max-width: 767px) {
-  .about-img {
-    padding-top: 0 !important;
-  }
-}
-
-
-.listContainer {
-  background-color: red;
-  padding: 10px;
-}
-
-.listItem {
-  border-bottom: 1px solid white;
-}
-
-.listItemText {
-  color: rgb(255, 255, 255);
-}
 
 
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {

@@ -14,6 +14,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import CodeIcon from '@mui/icons-material/Code';
 import MailIcon from '@mui/icons-material/Mail';
 import { motion } from 'framer-motion';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contactRef } ) {
@@ -44,6 +45,7 @@ export default function TemporaryDrawer({ introRef, aboutRef, skillsRef , contac
       transition={{ duration: 1 }}
     >
       <List>
+      <CloseIcon sx={{float : 'top'}}></CloseIcon>
         {['Intro', 'About', 'Skills', 'Contact'].map((text, index) => (
           <motion.div key={text} layout>
             <ListItem disablePadding>
