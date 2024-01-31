@@ -86,9 +86,9 @@ const About = forwardRef((props, ref) => {
     paddingBottom: "50px",
     position: "relative", // Add position relative to the container
     overflow: "hidden", //   Hide overflow to prevent placeholder from being visible
-    border: "1.3px solid rgba(255, 255, 255, 0.637) " , 
-    boxShadow: "2px 5px 8px 8px rgba(244, 237, 229, 0.137)" , 
-    borderRadius: "50%"
+    border: "1.3px solid rgba(255, 255, 255, 0.637) ",
+    boxShadow: "2px 5px 8px 8px rgba(244, 237, 229, 0.137)",
+    borderRadius: "50%",
   };
 
   return (
@@ -110,10 +110,10 @@ const About = forwardRef((props, ref) => {
       <div style={sectionStyles}>
         <span style={spanStyles}>💡 Innovation and Creativity:</span>
         <p style={textStyle}>
-          Driven by a passion for innovation, I believe in tackling challenges
-          with fresh perspectives. I developed a machine learning model to
-          predict customer churn, significantly improving retention rates at a
-          local startup.
+          I love coming up with new ideas and finding creative solutions.
+          Whether it's starting fresh projects or rethinking how things are
+          done, I enjoy bringing creativity to my work. I believe innovation
+          makes work more exciting and leads to positive changes.
         </p>
       </div>
       <div>
@@ -129,8 +129,12 @@ const About = forwardRef((props, ref) => {
         <span style={spanStyles}> 🔧 Problem-Solving Skills: </span>
         <p style={textStyle}>
           I'm skilled at solving complex problems with a strategic mindset.
-          Achieved success in academics and <b style={{color : "#EAA16E" }}> ranked 34th in IEEEXtreme 17.0💻
-          among 986 Tunisian teams </b>, 1095 worldwide among 7901 teams.
+          Achieved success in academics and{" "}
+          <b style={{ color: "#EAA16E" }}>
+            {" "}
+            ranked 34th in IEEEXtreme 17.0💻 among 986 Tunisian teams{" "}
+          </b>
+          , 1095 worldwide among 7901 teams.
         </p>
       </div>
       <div>
