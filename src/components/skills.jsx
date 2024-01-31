@@ -10,13 +10,13 @@ import {
   DiVisualstudio,
   DiNpm,
   DiMongodb,
-  
+  DiGithub,
 } from "react-icons/di";
 import { PrintDisabledTwoTone } from "@mui/icons-material";
 const Skills = forwardRef((props, ref) => {
   return (
     <div ref={ref} style={{ paddingBottom: "370px" }}>
-      <h1 
+      <h1
         style={{
           fontSize: "2.9em",
           color: "white",
@@ -32,9 +32,8 @@ const Skills = forwardRef((props, ref) => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          fontSize : "1.2em" ,  
+          fontSize: "1.2em",
           alignContent: "space-around",
-          
         }}
       >
         <CgCPlusPlus className="tech-icons" />
@@ -42,10 +41,9 @@ const Skills = forwardRef((props, ref) => {
         <DiJavascript1 className="tech-icons" />
         <DiReact className="tech-icons" />
         <DiNodejs className="tech-icons" />
-        <DiMongodb className="tech-icons"/>
-        
+        <DiMongodb className="tech-icons" />
       </div>
-      <h1 
+      <h1
         style={{
           fontSize: "2.9em",
           color: "white",
@@ -54,22 +52,21 @@ const Skills = forwardRef((props, ref) => {
           paddingTop: "150px",
         }}
       >
-        <span style={{ color: "#EAA16E" }}>Tools</span>  I Use
+        <span style={{ color: "#EAA16E" }}>Tools</span> I Use
       </h1>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          fontSize : "1.2em" ,  
-          alignContent: "space-around",        
+          fontSize: "1.2em",
+          alignContent: "space-around",
         }}
       >
         <DiVisualstudio className="tech-icons" />
         <DiNpm className="tech-icons" />
         <DiGit className="tech-icons" />
-        
-        
+        <DiGithub className="tech-icons" />
       </div>
     </div>
   );
