@@ -22,6 +22,9 @@ module.exports = withMT({
       width: ["responsive", "hover", "focus"],
       height: ["responsive", "hover", "focus"],
     },
+    colors : {
+      'custom' : '#EAA16E'
+    }
   },
   theme: {
     extend: {},
