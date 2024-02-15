@@ -52,6 +52,7 @@ const Header = ({ introRef, aboutRef, skillsRef, contactRef }) => {
           contactRef={contactRef}
           activeSection={activeSection}
         />
+      
       ) : (
         <nav className=" backdrop-blur-sm text-white py-2.5 dark:bg-transparent fixed top-0 w-full z-10">
           <div className="flex items-center justify-between max-w-screen-xl px-4 mx-auto ">

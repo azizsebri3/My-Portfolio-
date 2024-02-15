@@ -7,13 +7,14 @@ module.exports = withMT({
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/tw-elements/dist/js/**/*.js",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
   },
   variants: {
@@ -22,13 +23,15 @@ module.exports = withMT({
       width: ["responsive", "hover", "focus"],
       height: ["responsive", "hover", "focus"],
     },
-    colors : {
-      'custom' : '#EAA16E'
-    }
+    colors: {
+      custom: "#EAA16E",
+    },
   },
   theme: {
     extend: {},
   },
   darkMode: "class",
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("tw-elements/dist/plugin.cjs"), 
+            require("flowbite/plugin")
+          ],
 });

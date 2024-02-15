@@ -1,6 +1,5 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import { CgCPlusPlus } from "react-icons/cg";
-import { motion } from "framer-motion";
 import {
   DiJavascript1,
   DiReact,
@@ -12,61 +11,69 @@ import {
   DiMongodb,
   DiGithub,
 } from "react-icons/di";
-import { PrintDisabledTwoTone } from "@mui/icons-material";
+
+const Tooltip = ({ content, children }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="relative inline-block"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {children}
+      {isHovered && (
+        <div className="absolute z-10 px-3 py-2 text-xl text-[#CDCBD6] bg-transparent rounded-lg shadow-md tooltip dark:bg-gray-700">
+          {content}
+          <div className="tooltip-arrow"></div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Skills = forwardRef((props, ref) => {
   return (
-    <div ref={ref} style={{ paddingBottom: "370px" }}>
-      <h1
-        style={{
-          fontSize: "2.9em",
-          color: "white",
-          textAlign: "center",
-          paddingBottom: "70px",
-          paddingTop: "150px",
-        }}
-      >
-        MY<span style={{ color: "#EAA16E" }}> SKILLS </span>
+    <div>
+      <h1 className="text-5xl text-white text-center pb-20 pt-40 " ref={ref}>
+        MY <span className="text-[#EAA16E]">SKILLS</span>
       </h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          fontSize: "1.2em",
-          alignContent: "space-around",
-        }}
-      >
-        <CgCPlusPlus className="tech-icons" />
-        <DiPython className="tech-icons" />
-        <DiJavascript1 className="tech-icons" />
-        <DiReact className="tech-icons" />
-        <DiNodejs className="tech-icons" />
-        <DiMongodb className="tech-icons" />
+      <div className="flex justify-center flex-wrap md:text-lg text-lg space-x-3  ">
+        <Tooltip content="C++">
+          <CgCPlusPlus className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="Python">
+          <DiPython className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="JavaScript">
+          <DiJavascript1 className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="React">
+          <DiReact className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="Node.js">
+          <DiNodejs className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="MongoDB">
+          <DiMongodb className="tech-icons" />
+        </Tooltip>
       </div>
-      <h1
-        style={{
-          fontSize: "2.9em",
-          color: "white",
-          textAlign: "center",
-          paddingBottom: "70px",
-          paddingTop: "150px",
-        }}
-      >
-        <span style={{ color: "#EAA16E" }}>Tools</span> I Use
+      <h1 className="text-5xl text-white text-center pb-20 pt-40 ">
+        <span className="text-[#EAA16E]">Tools</span> I Use
       </h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          fontSize: "1.2em",
-          alignContent: "space-around",
-        }}
-      >
-        <DiVisualstudio className="tech-icons" />
-        <DiNpm className="tech-icons" />
-        <DiGit className="tech-icons" />
-        <DiGithub className="tech-icons" />
+      <div className="flex justify-center flex-wrap md:text-lg text-lg space-x-3 ">
+        <Tooltip content="Visual Studio">
+          <DiVisualstudio className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="npm">
+          <DiNpm className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="Git">
+          <DiGit className="tech-icons" />
+        </Tooltip>
+        <Tooltip content="GitHub">
+          <DiGithub className="tech-icons" />
+        </Tooltip>
       </div>
     </div>
   );

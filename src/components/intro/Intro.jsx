@@ -24,7 +24,7 @@ const Intro = forwardRef((props, ref) => {
   }, [controls]);
 
   const [typeEffect] = useTypewriter({
-    words: ["Aziz Sebri "],
+    words: ["Aziz Sebri"],
     loop: {},
     typeSpeed: 120,
     deleteSpeed: 120,
