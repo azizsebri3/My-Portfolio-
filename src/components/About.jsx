@@ -13,7 +13,7 @@ const About = forwardRef((props, ref) => {
       const scrollY = window.scrollY || window.pageYOffset;
       const threshold = window.innerHeight / 2;
 
-      // setIsVisible ll framer motion bech ye5dem fi kol mara
+      // Trigger visibility for the framer motion animation
       scrollY > threshold && setIsVisible(true);
     };
 
@@ -40,7 +40,7 @@ const About = forwardRef((props, ref) => {
     alignItems: "center",
     justifyContent: "center", // Center vertically and horizontally
     padding: "0 10px",
-    textAlign: "center", // Corrected typo in 'textAlign'
+    textAlign: "center",
   };
 
   const headingStyles = {
@@ -84,8 +84,8 @@ const About = forwardRef((props, ref) => {
     justifyContent: "flex-end", // Align to the right
     paddingTop: "30px",
     paddingBottom: "50px",
-    position: "relative", // Add position relative to the container
-    overflow: "hidden", //   Hide overflow to prevent placeholder from being visible
+    position: "relative",
+    overflow: "hidden", // Hide overflow to prevent placeholder from being visible
     border: "1.3px solid rgba(255, 255, 255, 0.637) ",
     boxShadow: "2px 5px 8px 8px rgba(244, 237, 229, 0.137)",
     borderRadius: "50%",
@@ -100,45 +100,33 @@ const About = forwardRef((props, ref) => {
       <div style={sectionStyles}>
         <span style={spanStyles}>🖥️ Academic Background:</span>
         <p style={textStyle}>
-          Studying at the Higher Institute of Computer Science of Mahdia, I've
-          delved into the intricacies of algorithms and data structures.
-          Proficient in C++ and Python, I've built a strong foundation in both
-          theoretical concepts and practical applications.
+          Currently pursuing a Bachelor's degree in Computer Science at the University of Namur, Belgium. I have expanded my skills in full-stack development, working with technologies like React.js, Node.js, and MongoDB, and have deepened my knowledge in data structures, algorithms, and web development.
         </p>
       </div>
 
       <div style={sectionStyles}>
-        <span style={spanStyles}>💡 Innovation and Creativity:</span>
+        <span style={spanStyles}>💡 Full-Stack Development and Innovation:</span>
         <p style={textStyle}>
-          I love coming up with new ideas and finding creative solutions.
-          Whether it's starting fresh projects or rethinking how things are
-          done, I enjoy bringing creativity to my work. I believe innovation
-          makes work more exciting and leads to positive changes.
+          With a passion for full-stack development, I have completed various projects, including an e-commerce platform using the MERN stack (MongoDB, Express, React, Node.js). My approach to development combines technical expertise with innovative problem-solving to deliver optimized solutions for clients.
         </p>
       </div>
       <div>
         <img
           src={Ai}
-          alt="Portfolio Photo"
+          alt="AI research and projects"
           style={imageStyles}
           className="logoImage"
         />
       </div>
 
       <div style={sectionStyles}>
-        <span style={spanStyles}> 🔧 Problem-Solving Skills: </span>
+        <span style={spanStyles}> 🔧 Problem-Solving and Competitive Programming: </span>
         <p style={textStyle}>
-          I'm skilled at solving complex problems with a strategic mindset.
-          Achieved success in academics and{" "}
-          <b style={{ color: "#EAA16E" }}>
-            {" "}
-            ranked 34th in IEEEXtreme 17.0💻 among 986 Tunisian teams{" "}
-          </b>
-          , 1095 worldwide among 7901 teams.
+          My problem-solving skills have been honed through various competitions, where I ranked <b style={{ color: "#EAA16E" }}>34th in IEEEXtreme 17.0</b> among 986 teams in Tunisia, and <b>1095th</b> worldwide among 7901 teams. Additionally, I am actively working on improving my algorithmic skills through platforms like LeetCode and HackerRank.
         </p>
       </div>
       <div>
-        <img src={IEEE} alt="Portfolio Photo" style={imageStyles} />
+        <img src={IEEE} alt="IEEE competition ranking" style={imageStyles} />
       </div>
     </motion.div>
   );
