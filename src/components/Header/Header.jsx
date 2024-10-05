@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "@mui/material";
 import TemporaryDrawer from "./TemporaryDrawer";
 
-const Header = ({ introRef, aboutRef, skillsRef, contactRef }) => {
+const Header = ({ introRef, aboutRef, skillsRef, projectsRef, contactRef }) => {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
   const [activeSection, setActiveSection] = useState("intro"); // Default to intro section
 
@@ -28,6 +28,12 @@ const Header = ({ introRef, aboutRef, skillsRef, contactRef }) => {
     } else if (window.scrollY >= contactRef.current.offsetTop) {
       setActiveSection("contact");
     }
+    else if (
+      window.scrollY >= projectsRef.current.offsetTop &&
+      window.scrollY < contactRef.current.offsetTop
+    ) {
+      setActiveSection("Projects");
+    }
   };
 
   const isSmScreen = useMediaQuery("(max-width:960px)");
@@ -49,10 +55,10 @@ const Header = ({ introRef, aboutRef, skillsRef, contactRef }) => {
           introRef={introRef}
           aboutRef={aboutRef}
           skillsRef={skillsRef}
+          projectsRef={projectsRef}
           contactRef={contactRef}
           activeSection={activeSection}
         />
-      
       ) : (
         <nav className=" backdrop-blur-sm text-white py-2.5 dark:bg-transparent fixed top-0 w-full z-10">
           <div className="flex items-center justify-between max-w-screen-xl px-4 mx-auto ">
@@ -92,6 +98,17 @@ const Header = ({ introRef, aboutRef, skillsRef, contactRef }) => {
                   } lg:hover:bg-transparent lg:border-0 lg:hover:text-[#EAA16E] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}
                 >
                   Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={() => executeScroll(projectsRef, "Projects")}
+                  className={`block py-2 pl-3 pr-4 text-white-700 border-b border-gray-100 ${
+                    activeSection === "Projects" ? "text-[#EAA16E]" : ""
+                  } lg:hover:bg-transparent lg:border-0 lg:hover:text-[#EAA16E] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}
+                >
+                  Projects
                 </a>
               </li>
               <li>

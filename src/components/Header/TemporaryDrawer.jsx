@@ -13,13 +13,14 @@ import InfoIcon from '@mui/icons-material/Info';
 import CodeIcon from '@mui/icons-material/Code';
 import MailIcon from '@mui/icons-material/Mail';
 import CloseIcon from '@mui/icons-material/Close';
+import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import { motion } from 'framer-motion';
 
-const sections = ['Intro', 'About', 'Skills', 'Contact'];
+const sections = ['Intro', 'About', 'Skills','Projects','Contact'];
 
-const icons = [<PlayArrowIcon />, <InfoIcon />, <CodeIcon />, <MailIcon />];
+const icons = [<PlayArrowIcon />, <InfoIcon />, <CodeIcon />,<AppsRoundedIcon />, <MailIcon />];
 
-const TemporaryDrawer = ({ introRef, aboutRef, skillsRef, contactRef }) => {
+const TemporaryDrawer = ({ introRef, aboutRef, skillsRef,projectsRef,contactRef }) => {
   const [state, setState] = useState({
     left: false,
   });
@@ -52,7 +53,7 @@ const TemporaryDrawer = ({ introRef, aboutRef, skillsRef, contactRef }) => {
           <motion.div key={text} layout>
             <ListItem disablePadding>
               <motion.div whileHover={{ scale: 1.1 }}>
-                <ListItemButton onClick={() => scrollToSection([introRef, aboutRef, skillsRef, contactRef][index])}>
+                <ListItemButton onClick={() => scrollToSection([introRef, aboutRef, skillsRef,projectsRef, contactRef][index])}>
                   <ListItemIcon>{icons[index]}</ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>

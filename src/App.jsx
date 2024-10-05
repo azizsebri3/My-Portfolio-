@@ -5,6 +5,7 @@ import back from "./assets/back.jpg";
 import Intro from "./components/intro/Intro";
 import Skills from "./components/skills";
 import Footer from "./components/Footer";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   const introRef = useRef();
   const aboutRef = useRef();
   const skillsRef = useRef();
+  const projectsRef = useRef();
   const contactRef = useRef();
 
   return (
@@ -31,11 +33,13 @@ function App() {
           introRef={introRef}
           aboutRef={aboutRef}
           skillsRef={skillsRef}
+          projectsRef={projectsRef}
           contactRef={contactRef}
         />
         <Intro ref={introRef} />
         <About ref={aboutRef} />
         <Skills ref={skillsRef} />
+        <Projects ref={projectsRef} />
         <Contact ref={contactRef} />
         <Footer />
       </div>

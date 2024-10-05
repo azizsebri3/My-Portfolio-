@@ -10,6 +10,7 @@ const Contact = forwardRef((props, ref) => {
   useEffect(() => {
     initTE({ Tooltip });
   }, []);
+  
   const form = useRef();
   const [isAlertVisible, setAlertVisibility] = useState(false);
   const [alertSeverity, setAlertSeverity] = useState("success");
@@ -19,19 +20,21 @@ const Contact = forwardRef((props, ref) => {
     e.preventDefault();
 
     const formData = new FormData(form.current);
-    const userName = formData.get("user_name");
-    const userEmail = formData.get("user_email");
+    const userName = formData.get("name");
+    const userEmail = formData.get("email");
     const message = formData.get("message");
+    
     if (!userName || !userEmail || !message) {
       setAlertSeverity("error");
       setAlertVisibility(true);
       return;
     }
+    
     setIsLoading(true);
 
     const templateId = "sebri";
-    const serviceId = "react_contact_detail";
-    const publicKey = "9ORn64-DyRR7CaH_p";
+    const serviceId = "service_m0szh0k";
+    const publicKey = "xO8SYnjIz8LWfdGRO";
 
     emailjs
       .sendForm(serviceId, templateId, form.current, publicKey)
@@ -39,10 +42,12 @@ const Contact = forwardRef((props, ref) => {
         (result) => {
           setAlertSeverity("success");
           setAlertVisibility(true);
+          
         },
         (error) => {
           setAlertSeverity("warning");
           setAlertVisibility(true);
+          
         }
       )
       .finally(() => {
@@ -54,67 +59,79 @@ const Contact = forwardRef((props, ref) => {
     <SplashScreen />
   ) : (
     <div ref={ref} className="container my-24 mx-auto md:px-6">
-      <section className="mb-32 text-center">
-        <div className="py-12 md:px-12">
-          <div className="container mx-auto xl:px-32">
-            <div className="grid items-center lg:grid-cols-2">
-              <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
-                <div className="relative z-[1] block rounded-lg bg-[#00000000] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14">
-                  <h2 style={{ color: "#EAA16E", fontSize: "40px" }}>
-                    Contact Me 
-                  </h2>
-                  <form ref={form} onSubmit={sendEmail}>
-                    <div className="relative mb-6">
-                      <input
-                        type="text"
-                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-                        name="user_name"
-                      />
-                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-                        Name
-                      </label>
-                    </div>
-                    <div className="relative mb-6">
-                      <input
-                        type="email"
-                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-                        name="user_email"
-                      />
-                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-                        Email address
-                      </label>
-                    </div>
-                    <div className="relative mb-6">
-                      <textarea
-                        className="peer block w-full rounded border-0 bg-transparent py-2 px-3 text-white outline-none transition-all duration-200 ease-linear"
-                        name="message"
-                        rows="3"
-                      ></textarea>
-                      <label className="absolute top-[-0.5rem] left-3 mb-0 text-[#E69E6D] transition-all duration-200 ease-out">
-                        Message
-                      </label>
-                    </div>
+      <section className="body-font relative">
+        <div className="container mx-auto px-5 py-24">
+          <div className="mb-12 flex w-full flex-col text-center">
+          <h1 className="text-5xl text-[#EAA16E] text-center pb-20 pt-40 ">
+          Contact <span className="text-white" ref={ref}>Me</span>
+        </h1>
+            <p className="mx-auto text-xl text-white leading-relaxed lg:w-2/3">
+              Feel free to reach out to us! Whether you have a question,
+              feedback, or a collaboration proposal, we'd love to hear from you.
+            </p>
+          </div>
 
-                    <button
-                      type="submit"
-                      data-te-ripple-init
-                      data-te-ripple-color="light"
-                      className="inline-block w-full rounded bg-[#EAA16E] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#E69E6D] transition duration-150 ease-in-out hover:bg-[#EAA16E] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:bg-[#EAA16E] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] focus:outline-none focus:ring-0 active:bg-[#EAA16E] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_#EAA16E] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_#EAA16E,0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
-                    >
-                      Send
-                    </button>
-                  </form>
+          <div className="mx-auto md:w-2/3 lg:w-1/2">
+            <form ref={form} onSubmit={sendEmail} className="-m-2 flex flex-wrap">
+              <div className="w-1/2 p-2">
+                <div className="relative">
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#eaa16e] focus:bg-gray-900 focus:ring-2 focus:ring-[#eaa16e]" 
+                    placeholder="Name" 
+                    required 
+                  />
+                  <label htmlFor="name" className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#eaa16e] transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#eaa16e]">Name</label>
                 </div>
               </div>
-              <div className="md:mb-12 lg:mb-0">
-                <div className="relative h-[700px] rounded-lg shadow-lg dark:shadow-black/20">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2679.918822721132!2d11.106280709955492!3d36.87369697717841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDUyJzI1LjUiTiAxMcKwMDYnMjkuNCJF!5e1!3m2!1sfr!2stn!4v1706130066030!5m2!1sfr!2stn"
-                    className="absolute left-0 top-0 h-full w-full rounded-lg"
-                    allowFullScreen
-                  ></iframe>
+              <div className="w-1/2 p-2">
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#eaa16e] focus:bg-gray-900 focus:ring-2 focus:ring-[#eaa16e]" 
+                    placeholder="Email" 
+                    required 
+                  />
+                  <label htmlFor="email" className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#eaa16e] transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#eaa16e]">Email</label>
                 </div>
               </div>
+              <div className="mt-4 w-full p-2">
+                <div className="relative">
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    className="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#eaa16e] focus:bg-gray-900 focus:ring-2 focus:ring-[#eaa16e]" 
+                    placeholder="Message" 
+                    required 
+                  ></textarea>
+                  <label htmlFor="message" className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#eaa16e] transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#eaa16e]">Message</label>
+                </div>
+              </div>
+              <div className="w-full p-2">
+                <button 
+                  type="submit" 
+                  className="mx-auto flex rounded border-0 bg-[#eaa16e] py-2 px-8 text-lg text-white hover:bg-[#d78a53] focus:outline-none"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+
+            {/* Footer */}
+            <div className="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center">
+              <a className="text-indigo-400">example@email.com</a>
+              <p className="my-5 leading-normal">49 Smith St. <br />Saint Cloud, MN 56301</p>
+              <span className="inline-flex">
+                {/* Social Media Icons */}
+                <a className="text-gray-500">
+                  {/* SVG for social media icon */}
+                </a>
+                {/* Add other social media icons similarly */}
+              </span>
             </div>
           </div>
         </div>
